@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+# Install required build dependencies
+sudo dnf install -y \
+  git automake autoconf libtool make gcc gcc-c++ wget \
+  systemd-devel pkgconf-pkg-config
+
 REPO_URL="https://github.com/loopj/openocd-efm32s2.git"
 BUILD_DIR="$PWD/build"
 PREFIX="$BUILD_DIR/opt"
